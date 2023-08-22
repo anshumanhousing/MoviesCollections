@@ -11,7 +11,7 @@ import UIKit
 
 class Downloader{
     class func imageDownloader(fromUrl urlString: String) -> UIImage{
-        let defaultImage = UIImage(systemName: "person.fill.xmark")!
+        let defaultImage = UIImage(systemName: "photo.artframe")!
         
         guard let url = URL(string: urlString), let data = try? Data(contentsOf: url) else {
             return defaultImage

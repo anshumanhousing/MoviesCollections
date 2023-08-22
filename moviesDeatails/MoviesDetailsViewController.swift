@@ -9,25 +9,27 @@ import UIKit
 
 class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var MoviesDetailsTableView: UITableView!
-    
+    let c = ["King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn"]
     var moviesList = [MovieData]()
+    @IBOutlet weak var MoviesDetailsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMoviesList()
+        MoviesDetailsTableView.dataSource = self
+        MoviesDetailsTableView.delegate = self
+        getMoviesListFromApi()
         print(moviesList)
     }
     
-    func getMoviesList(){
+    func getMoviesListFromApi(){
         let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=1"
         let apiUrl = URL(string: apiUrlString)
         let request = URLRequest(url: apiUrl!)
         
         URLSession.shared.dataTask(with: request) { (data,response,error) in
             guard error == nil, data != nil else {
-                print(error?.localizedDescription ?? "Error while fetching data...")
+                print(error?.localizedDescription ?? "Error while fetching data")
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -37,7 +39,6 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             let apiResponse = try? JSONDecoder().decode(Response.self, from: data!)
             self.moviesList = apiResponse?.results ?? [MovieData]()
             print(self.moviesList.count)
-            //print(self.moviesList)
             
         }.resume()
         print(moviesList.count)
@@ -45,35 +46,22 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviesList.count
+        return c.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = MoviesDetailsTableView.dequeueReusableCell(withIdentifier: "UserDetailCellID", for: indexPath) as? MoviesDetailsTableViewCell
-        
-        guard let cell = cell else {
-            return cell!
-        }
+        let cell = MoviesDetailsTableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? MoviesDetailsTableViewCell
         
         
+        cell?.movieImage.image = UIImage(systemName: "photo.artframe")!
+        cell?.movieTitle.text = c[indexPath.row]
+        cell?.movieOverview.text = "On the brink of losing her childhood home, Maddie discovers an intriguing job listing: wealthy helicopter parents looking for someone to “date” their introverted 19-year-old son, Percy, before he leaves for college. To her surprise, Maddie soon discovers the awkward Percy is no sure thing."
         
-        let url = URL(string: moviesList[indexPath.row].poster_path)
-        
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            let data = try? Data(contentsOf: url!)
-            
-            if let data = data {
-                
-                DispatchQueue.main.async {
-                    cell.movieImage.image = UIImage(data: data)
-                }
-                
-            }
-        }.resume()
-        cell.movieTitle.text = "Helo"
-
-        cell.movieOverview.text = "JHK"
-        return cell
+//        let urlString = String("https://image.tmdb.org/t/p/w500" + moviesList[indexPath.row].poster_path)
+//        cell?.movieImage.image = Downloader.imageDownloader(fromUrl: urlString)
+//        cell?.movieTitle.text = "\(String(moviesList[indexPath.row].title))"
+//        cell?.movieOverview.text = "\(String(moviesList[indexPath.row].overview))"
+        return cell!
     }
 
 
