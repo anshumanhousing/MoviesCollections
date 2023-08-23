@@ -21,10 +21,19 @@ class MoviesOverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton()
-        //setAllDetails()
+        setAllDetails()
     }
     
     func setAllDetails(){
+        moviePoster.layer.cornerRadius = 15
+        movieTitle.text = "Elemental"
+        moviePoster.image = Downloader.imageDownloader(fromUrl: "https://image.tmdb.org/t/p/w500//6oH378KUfCEitzJkm07r97L0RsZ.jpg")
+        moviePopularity.text = "3816.744"
+        movieRating.text = "7.8"
+        movieReleaseDate.text = "2023-06-14"
+        movieOverview.text = "In a city where fire, water, land and air residents live together, a fiery young woman and a go-with-the-flow guy will discover something elemental: how much they have in common."
+    }
+    func setAllDetail(){
         moviePoster.layer.cornerRadius = 15
         movieTitle.text = movieDetail?.title
         moviePoster.image = Downloader.imageDownloader(fromUrl: "https://image.tmdb.org/t/p/w500" + movieDetail!.poster_path)
