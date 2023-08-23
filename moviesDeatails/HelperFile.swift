@@ -23,4 +23,14 @@ class Downloader{
         return extractedImage
     }
     
+    class func apiData(fromUrl urlString: String) -> [MovieData] {
+        var moviesList = [MovieData]()
+        let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=1"
+        let apiUrl = URL(string: apiUrlString)
+        let request = URLRequest(url: apiUrl!)
+        let data = try? Data(contentsOf: apiUrl!)
+        let apiResponnse = try? JSONDecoder().decode(Response.self, from: data!)
+        moviesList = apiResponnse?.results ?? [MovieData]()
+        return moviesList
+    }
 }

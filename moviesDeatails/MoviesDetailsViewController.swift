@@ -16,7 +16,6 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         MoviesDetailsTableView.dataSource = self
         MoviesDetailsTableView.delegate = self
         getMoviesListFromApi()
@@ -24,11 +23,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func getMoviesListFromApi(){
         let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=1"
-        let apiUrl = URL(string: apiUrlString)
-        let request = URLRequest(url: apiUrl!)
-        let data = try? Data(contentsOf: apiUrl!)
-        let apiResponnse = try? JSONDecoder().decode(Response.self, from: data!)
-        self.moviesList = apiResponnse?.results ?? [MovieData]()
+        self.moviesList = Downloader.apiData(fromUrl: apiUrlString)
     }
     
     

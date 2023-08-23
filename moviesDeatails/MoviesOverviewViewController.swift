@@ -16,7 +16,7 @@ class MoviesOverviewViewController: UIViewController {
     @IBOutlet weak var moviePopularity: UILabel!
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
-    @IBOutlet weak var movieOverview: UILabel!
+    //@IBOutlet weak var movieOverview: UILabel!
     
     var movieDetail: MovieData?
     
