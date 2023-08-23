@@ -11,6 +11,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     let c = ["King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn","King", "Queen", "Rook", "Bishop", "Knight", "Pawn"]
     var moviesList = [MovieData]()
+    var currentIndex: Int?
     @IBOutlet weak var MoviesDetailsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -62,6 +63,20 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 //        cell?.movieTitle.text = "\(String(moviesList[indexPath.row].title))"
 //        cell?.movieOverview.text = "\(String(moviesList[indexPath.row].overview))"
         return cell!
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.currentIndex = indexPath.row
+        self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "currentIndex" {
+            let movieContent = segue.destination as? MoviesOverviewViewController
+            movieContent?.movieDetail = moviesList[currentIndex!]
+        }
     }
 
 

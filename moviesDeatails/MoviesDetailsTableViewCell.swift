@@ -17,6 +17,7 @@ class MoviesDetailsTableViewCell: UITableViewCell {
     
     var movieDeatails: MovieData?{
         willSet{
+            movieImage.layer.cornerRadius = 5
             movieImage.image = Downloader.imageDownloader(fromUrl: "https://image.tmdb.org/t/p/w500" + newValue!.poster_path)
             movieTitle.text = newValue!.title
             movieOverview.text = newValue!.overview
