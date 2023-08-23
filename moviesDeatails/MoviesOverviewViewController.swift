@@ -9,6 +9,8 @@ import UIKit
 
 class MoviesOverviewViewController: UIViewController {
     
+    
+    @IBOutlet weak var overViewTextField: UITextView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var moviePopularity: UILabel!
@@ -31,8 +33,10 @@ class MoviesOverviewViewController: UIViewController {
         moviePopularity.text = "\(movieDetail!.popularity)"
         movieRating.text = "\(movieDetail!.vote_average)"
         movieReleaseDate.text = movieDetail?.release_date
-        movieOverview.text = movieDetail?.overview
+        overViewTextField.text = movieDetail?.overview
+        //movieOverview.text = movieDetail?.overview
     }
+    
     
     func backButton(){
         let backButton = UIBarButtonItem()
