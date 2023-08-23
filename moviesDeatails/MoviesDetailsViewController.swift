@@ -29,24 +29,6 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         let data = try? Data(contentsOf: apiUrl!)
         let apiResponnse = try? JSONDecoder().decode(Response.self, from: data!)
         self.moviesList = apiResponnse?.results ?? [MovieData]()
-        
-//        URLSession.shared.dataTask(with: request) { (data,response,error) in
-//            guard error == nil, data != nil else {
-//                print(error?.localizedDescription ?? "Error while fetching data")
-//                return
-//            }
-//            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-//                print("Status Code not 200")
-//                return
-//            }
-//            let apiResponse = try? JSONDecoder().decode(Response.self, from: data!)
-////            DispatchQueue.main.async {
-////                self.moviesList = apiResponse?.results ?? [MovieData]()
-////            }
-//            self.moviesList = apiResponse?.results ?? [MovieData]()
-//            print(self.moviesList.count)
-//
-//        }.resume()
     }
     
     
@@ -58,9 +40,10 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         let cell = MoviesDetailsTableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? MoviesDetailsTableViewCell
         
-        let urlString = String("https://image.tmdb.org/t/p/w500" + moviesList[indexPath.row].poster_path)
         cell?.movieTitle.text = "\(String(moviesList[indexPath.row].title))"
         cell?.movieOverview.text = "\(String(moviesList[indexPath.row].overview))"
+        
+        let urlString = String("https://image.tmdb.org/t/p/w500" + moviesList[indexPath.row].poster_path)
         let imageURL = URL(string: urlString)
         URLSession.shared.downloadTask(with: imageURL!){ (fileURL, URLResponse, error) in
             guard error == nil else{
@@ -88,7 +71,6 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         self.currentIndex = indexPath.row
         self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "movieDetailsSegue" {
