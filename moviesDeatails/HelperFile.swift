@@ -23,31 +23,4 @@ class Downloader{
         return extractedImage
     }
     
-//    class func imageDownloaderUrlSession(fromurl urlString: String) -> UIImage{
-//        let imageURL = URL(string: urlString)
-//        var image: UIImage?
-//        URLSession.shared.downloadTask(with: imageURL!){ (fileURL, URLResponse, error) in
-//            guard error == nil else{
-//                print(error?.localizedDescription)
-//                return
-//            }
-//            let response = URLResponse as! HTTPURLResponse
-//            guard response.statusCode == 200 else{
-//                print(response.statusCode)
-//                return
-//            }
-//            guard let url = fileURL , let imageContent = try? Data(contentsOf: url) else{
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                let imag = UIImage(data: imageContent)
-//                image = imag
-//                
-//            }
-//            //image = UIImage(data: imageContent)
-//        }.resume()
-//        return image!
-//    }
-    
-    
 }
