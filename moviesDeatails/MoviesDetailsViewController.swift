@@ -12,6 +12,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
     var moviesList = [MovieData]()
     var currentIndex: Int?
+    var pageNo: Int = 1
     @IBOutlet weak var MoviesDetailsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func getMoviesListFromApi(){
-        let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=1"
+        let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=" + String(pageNo)
         self.moviesList = Downloader.apiData(fromUrl: apiUrlString)
     }
     
@@ -73,6 +74,21 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             movieContent?.movieDetail = moviesList[currentIndex!]
         }
     }
-
+    
+    
+    @IBAction func nextButton(_ sender: Any) {
+        if pageNo < 74{
+            pageNo = pageNo + 1
+            moviesList.removeAll()
+            getMoviesListFromApi()
+            MoviesDetailsTableView.dataSource = self
+            MoviesDetailsTableView.delegate = self
+        }
+        else {
+            showAlert(withtTitle: "Sorry", andMessage: "No more Movies Left")
+        }
+    }
+    
 
 }
+

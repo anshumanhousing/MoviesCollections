@@ -25,12 +25,20 @@ class Downloader{
     
     class func apiData(fromUrl urlString: String) -> [MovieData] {
         var moviesList = [MovieData]()
-        let apiUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page=1"
-        let apiUrl = URL(string: apiUrlString)
+        let apiUrl = URL(string: urlString)
         let request = URLRequest(url: apiUrl!)
         let data = try? Data(contentsOf: apiUrl!)
         let apiResponnse = try? JSONDecoder().decode(Response.self, from: data!)
         moviesList = apiResponnse?.results ?? [MovieData]()
         return moviesList
+    }
+}
+
+extension UIViewController{
+    func showAlert(withtTitle alert: String, andMessage message: String, actionTitle  :String = "Cancel") {
+        let alert = UIAlertController(title: alert, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: actionTitle, style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }

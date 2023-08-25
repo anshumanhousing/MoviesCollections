@@ -16,17 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yQ2-hX-qV7">
-                                <rect key="frame" x="0.0" y="94" width="393" height="758"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yQ2-hX-qV7">
+                                <rect key="frame" x="0.0" y="91" width="393" height="761"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AeC-oH-rIz">
+                                    <rect key="frame" x="0.0" y="178" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                    <connections>
+                                        <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t74-iB-2Ca"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="97" id="STe-bi-tkx" customClass="MoviesDetailsTableViewCell" customModule="moviesDeatails" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="97"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="100" id="STe-bi-tkx" customClass="MoviesDetailsTableViewCell" customModule="moviesDeatails" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="STe-bi-tkx" id="3HB-ZE-Qdv">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movieTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71T-xr-PXA">
@@ -42,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1L3-U0-g4l">
-                                                    <rect key="frame" x="0.0" y="3" width="80" height="91"/>
+                                                    <rect key="frame" x="0.0" y="3" width="80" height="94"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="6Eg-WO-NLZ"/>
                                                         <constraint firstAttribute="width" constant="80" id="CjP-Cx-JDr"/>
@@ -72,6 +80,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.79438576307016306" green="0.82834919338703694" blue="0.838720821228224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="yQ2-hX-qV7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="91" id="GaY-Uj-jag"/>
+                            <constraint firstAttribute="bottom" secondItem="yQ2-hX-qV7" secondAttribute="bottom" id="YGY-hU-m3R"/>
+                            <constraint firstItem="yQ2-hX-qV7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qNY-1Y-ytM"/>
+                            <constraint firstItem="yQ2-hX-qV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ywC-sC-Qo9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies Collection" id="GtJ-y5-tWw" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>

@@ -4,29 +4,37 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvelPoster" translatesAutoresizingMaskIntoConstraints="NO" id="pU9-qR-ZqQ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-af-NWi">
+                                <rect key="frame" x="0.0" y="-25" width="393" height="1101"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MOVIES    COLLECTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDH-21-2jn">
+                                <rect key="frame" x="10" y="109" width="373" height="76"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.90189700409999995" green="1" blue="0.97348835730000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="pU9-qR-ZqQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Euw-th-L7g"/>
-                            <constraint firstItem="pU9-qR-ZqQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="MyD-6i-Y1e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pU9-qR-ZqQ" secondAttribute="bottom" constant="-34" id="Y9S-rJ-1Xy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pU9-qR-ZqQ" secondAttribute="trailing" id="gei-Me-l1f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PLE-af-NWi" secondAttribute="bottom" constant="-258" id="H2P-Ry-9iR"/>
+                            <constraint firstItem="QDH-21-2jn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="NP8-Gu-i2N"/>
+                            <constraint firstItem="PLE-af-NWi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-84" id="PUE-eO-UWG"/>
+                            <constraint firstItem="PLE-af-NWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QsB-af-z5g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PLE-af-NWi" secondAttribute="trailing" id="gnP-wZ-RqN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QDH-21-2jn" secondAttribute="trailing" constant="10" id="obN-yW-dk0"/>
+                            <constraint firstItem="QDH-21-2jn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oeK-k7-Q9M"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,9 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="marvelPoster" width="4961" height="7016"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="poster" width="500" height="750"/>
     </resources>
 </document>
