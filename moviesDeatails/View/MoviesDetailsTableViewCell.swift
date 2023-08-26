@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Contacts
 
 class MoviesDetailsTableViewCell: UITableViewCell {
     
@@ -14,11 +15,16 @@ class MoviesDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
-    
     var movieDeatails: MovieData?{
         willSet{
-            movieImage.layer.cornerRadius = 5
-            movieImage.image = Downloader.imageDownloader(fromUrl: "https://image.tmdb.org/t/p/w500" + newValue!.poster_path)
+            let urlString = String(JsonConstants.posterHeader + newValue!.poster_path)
+            Downloader.image(fromUrl: urlString) { image, urlString in
+                if let imageObj = image {
+                    DispatchQueue.main.async {
+                        self.movieImage.image = imageObj
+                    }
+                }
+            }
             movieTitle.text = newValue!.title
             movieOverview.text = newValue!.overview
         }

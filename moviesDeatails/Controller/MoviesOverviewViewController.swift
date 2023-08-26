@@ -27,20 +27,26 @@ class MoviesOverviewViewController: UIViewController {
     }
     
     func setAllDetails(){
-        moviePoster.layer.cornerRadius = 15
         movieTitle.text = movieDetail?.title
-        moviePoster.image = Downloader.imageDownloader(fromUrl: "https://image.tmdb.org/t/p/w500" + movieDetail!.poster_path)
         moviePopularity.text = "\(movieDetail!.popularity)"
         movieRating.text = "\(movieDetail!.vote_average)"
         movieReleaseDate.text = movieDetail?.release_date
         overViewTextField.text = movieDetail?.overview
-        //movieOverview.text = movieDetail?.overview
+        let urlString = String( JsonConstants.posterHeader + movieDetail!.poster_path)
+        Downloader.image(fromUrl: urlString) { image, urlString in
+            if let imageObj = image{
+                DispatchQueue.main.async {
+                    self.moviePoster.image = imageObj
+                }
+            }
+        }
+        moviePoster.layer.cornerRadius = CGFloat(Image.cornerRadius)
     }
     
     
     func backButton(){
         let backButton = UIBarButtonItem()
-        backButton.title = "Back"
+        backButton.title = Button.title
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
