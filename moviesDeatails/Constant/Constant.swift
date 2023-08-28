@@ -11,6 +11,7 @@ import Foundation
 struct JsonConstants{
     static let apiUrl: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page="
     static let posterHeader: String = "https://image.tmdb.org/t/p/w500"
+    let total_Pages: Int?
 }
 
 struct Identifiers{

@@ -8,18 +8,18 @@
 import UIKit
 import Contacts
 
-class MoviesDetailsTableViewCell: UITableViewCell {
+class MoviesDetailsTableViewCell: UITableViewCell{
     
     
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
-    var movieDeatails: MovieData?{
+var movieDeatails: MovieData?{
         willSet{
             let urlString = String(JsonConstants.posterHeader + newValue!.poster_path)
-            Downloader.image(fromUrl: urlString) { image, urlString in
-                if let imageObj = image {
+            movieImage.getImage(fromUrl: urlString) { image in
+                if let imageObj = image{
                     DispatchQueue.main.async {
                         self.movieImage.image = imageObj
                     }

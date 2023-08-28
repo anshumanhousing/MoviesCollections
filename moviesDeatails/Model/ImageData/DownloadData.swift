@@ -11,27 +11,62 @@ import UIKit
 
 class Downloader{
     
-    class func image(fromUrl urlString: String, completion: ((_ image: UIImage?, _ error: String?) -> ())?) {
+    class func image(fromUrl urlString: String, completion: ((_ image: UIImage?) -> ())?) {
            guard let url = URL(string: urlString) else {
-              completion?(nil, nil)
+              completion?(nil)
               return
           }
           URLSession.shared.dataTask(with: url) { (data, response,error) in
              if let error = error {
                 print("\(error)")
-                completion?(nil, "\(error)")
+                completion?(nil)
                 return
              }
              guard let httpResponse = response as? HTTPURLResponse,(200...299).contains(httpResponse.statusCode) else {
-                completion?(nil, "httpResponse.statusCode")
+                completion?(nil)
                 return
              }
              if let data = data, let image = UIImage(data: data) {
-                completion?(image, "OK")
+                completion?(image)
                 return
              }
-             completion?(nil, urlString)
+             completion?(nil)
           }.resume()
        }
+}
+
+extension UIImageView{
+    class ImageStore: NSObject {
+        static let cache = NSCache<NSString, UIImage>()
+    }
+    func getImage(fromUrl urlString: String, completion: ((_ image: UIImage?) -> ())?) {
+        if let image = ImageStore.cache.object(forKey: urlString as NSString) {
+            DispatchQueue.main.async {
+                completion?(image)
+            }
+        }else{
+            guard let url = URL(string: urlString) else {
+                completion?(nil)
+                return
+            }
+            URLSession.shared.dataTask(with: url) { (data, response,error) in
+                if let error = error {
+                    print("\(error)")
+                    completion?(nil)
+                    return
+                }
+                guard let httpResponse = response as? HTTPURLResponse,(200...299).contains(httpResponse.statusCode) else {
+                    completion?(nil)
+                    return
+                }
+                if let data = data, let image = UIImage(data: data) {
+                    ImageStore.cache.setObject(image, forKey: urlString as NSString)
+                    completion?(image)
+                    return
+                }
+                completion?(nil)
+            }.resume()
+        }
+    }
 }
 

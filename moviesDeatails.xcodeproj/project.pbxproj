@@ -132,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				17BB550A2A94AA9100BAF159 /* Assets.xcassets */,
-				17BB550F2A94AA9100BAF159 /* Info.plist */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -156,6 +155,7 @@
 		17BB55002A94AA9000BAF159 /* moviesDeatails */ = {
 			isa = PBXGroup;
 			children = (
+				17BB550F2A94AA9100BAF159 /* Info.plist */,
 				1781F6E72A9A72EB00D9B97E /* Delegate */,
 				1781F6E82A9A745300D9B97E /* Constant */,
 				1781F6DE2A9A70A500D9B97E /* Model */,

@@ -21,7 +21,7 @@ class JsonDownloader{
         return moviesList
     }
     
-    class func apiData(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int, _ error: String?) -> ())?) {
+    class func apiData(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int, _ error: String?) -> ())?){
            guard let url = URL(string: urlString) else {
               completion?(nil, 0, urlString)
               return
@@ -31,7 +31,7 @@ class JsonDownloader{
                 return
             }
             do {
-                guard let apiData = try?  JSONDecoder().decode(Response.self, from: data) else{
+                guard let apiData = try? JSONDecoder().decode(Response.self, from: data) else{
                     return
                 }
                 if let movieData = apiData.results as [MovieData]?{
@@ -39,6 +39,5 @@ class JsonDownloader{
                 }
             }
         }.resume()
-
      }
 }

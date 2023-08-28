@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoviesOverviewViewController: UIViewController {
+class MoviesOverviewViewController: UIViewController{
     
     
     @IBOutlet weak var overViewTextField: UITextView!
@@ -33,7 +33,7 @@ class MoviesOverviewViewController: UIViewController {
         movieReleaseDate.text = movieDetail?.release_date
         overViewTextField.text = movieDetail?.overview
         let urlString = String( JsonConstants.posterHeader + movieDetail!.poster_path)
-        Downloader.image(fromUrl: urlString) { image, urlString in
+        moviePoster.getImage(fromUrl: urlString) { image in
             if let imageObj = image{
                 DispatchQueue.main.async {
                     self.moviePoster.image = imageObj
