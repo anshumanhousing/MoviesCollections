@@ -12,16 +12,11 @@ import UIKit
 
 class JsonDownloader{
     
-    class func apiData(fromUrl urlString: String) -> [MovieData] {
-        var moviesList = [MovieData]()
-        let apiUrl = URL(string: urlString)
-        let data = try? Data(contentsOf: apiUrl!)
-        let apiResponnse = try? JSONDecoder().decode(Response.self, from: data!)
-        moviesList = apiResponnse?.results ?? [MovieData]()
-        return moviesList
+    static let shared = JsonDownloader()
+    private init(){
     }
     
-    class func apiData(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int, _ error: String?) -> ())?){
+    func apiData(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int, _ error: String?) -> ())?){
            guard let url = URL(string: urlString) else {
               completion?(nil, 0, urlString)
               return

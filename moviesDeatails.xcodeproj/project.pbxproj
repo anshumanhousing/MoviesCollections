@@ -20,6 +20,7 @@
 		17BB551A2A94B72F00BAF159 /* MoviesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB55192A94B72F00BAF159 /* MoviesDetailsViewController.swift */; };
 		17BB551C2A94B75100BAF159 /* MoviesOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB551B2A94B75100BAF159 /* MoviesOverviewViewController.swift */; };
 		17BB551E2A94DAAE00BAF159 /* DownloadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB551D2A94DAAE00BAF159 /* DownloadData.swift */; };
+		17DE06282A9E218C000658BF /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE06272A9E218C000658BF /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		17BB55192A94B72F00BAF159 /* MoviesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewController.swift; sourceTree = "<group>"; };
 		17BB551B2A94B75100BAF159 /* MoviesOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesOverviewViewController.swift; sourceTree = "<group>"; };
 		17BB551D2A94DAAE00BAF159 /* DownloadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadData.swift; sourceTree = "<group>"; };
+		17DE06272A9E218C000658BF /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				1781F6DC2A9A705400D9B97E /* UIViewController.swift */,
+				17DE06272A9E218C000658BF /* UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,9 +164,9 @@
 				1781F6DE2A9A70A500D9B97E /* Model */,
 				1781F6E22A9A710A00D9B97E /* Controller */,
 				1781F6E12A9A70F400D9B97E /* View */,
+				1781F6DF2A9A70C200D9B97E /* Extension */,
 				1781F6E92A9A74CD00D9B97E /* StoryBoard */,
 				1781F6EA2A9A751A00D9B97E /* Assets */,
-				1781F6DF2A9A70C200D9B97E /* Extension */,
 			);
 			path = moviesDeatails;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				177ED5362A98EAF300474F6A /* Constant.swift in Sources */,
 				17BB55162A94B60900BAF159 /* MoviesDetailsTableViewCell.swift in Sources */,
 				17BB551E2A94DAAE00BAF159 /* DownloadData.swift in Sources */,
+				17DE06282A9E218C000658BF /* UITableView.swift in Sources */,
 				1781F6DD2A9A705400D9B97E /* UIViewController.swift in Sources */,
 				17BB55182A94B65300BAF159 /* ApiResponse.swift in Sources */,
 				17BB551A2A94B72F00BAF159 /* MoviesDetailsViewController.swift in Sources */,

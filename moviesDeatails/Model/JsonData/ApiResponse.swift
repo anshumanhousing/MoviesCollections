@@ -16,7 +16,7 @@ struct Response: Decodable{
     var total_results: Int
 }
  
-struct MovieData: Decodable{
+struct MovieData: Decodable, Equatable{
     var adult: Bool
     var backdrop_path: String
     var genre_ids: [Int]
@@ -36,4 +36,16 @@ struct MovieData: Decodable{
 struct DatesValue: Decodable{
     var maximum: String
     var minimum: String
+}
+
+struct RequiredDetail: Decodable{
+    var title: String
+    var overview: String
+    var popularity: Double
+    var release_date: String
+    var vote_average: Double
+    var poster_path: String
+}
+struct Result: Decodable{
+    var results: [RequiredDetail]
 }

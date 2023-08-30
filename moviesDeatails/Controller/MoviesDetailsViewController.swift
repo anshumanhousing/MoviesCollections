@@ -9,7 +9,16 @@ import UIKit
 
 class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var moviesList = [MovieData]()
+    var moviesList: [MovieData] = []{
+        willSet{
+            self.moviesList = newValue
+        }
+        didSet{
+            if self.moviesList != oldValue{
+                MoviesDetailsTableView.reloadData()
+            }
+        }
+    }
     var currentIndex: Int?
     var pageNo: Int = 1
     var totalPages: Int = 0
@@ -23,13 +32,13 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func getMoviesListFromApi(){
-        let apiUrlString = JsonConstants.apiUrl + String(pageNo)
-        JsonDownloader.apiData(fromUrl: apiUrlString) { apiData, pages, error  in
+        let apiUrlString = JsonConstants.API_URL + String(describing: pageNo)
+        JsonDownloader.shared.apiData(fromUrl: apiUrlString) { apiData, pages, error  in
             if let getApiData = apiData {
                 DispatchQueue.main.async {
                     self.moviesList = self.moviesList + getApiData
                     self.totalPages = pages
-                    self.MoviesDetailsTableView.reloadData()
+                    //self.MoviesDetailsTableView.reloadData()
                 }
             }
         }
@@ -39,10 +48,10 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         if pageNo < totalPages {
             pageNo = pageNo + 1
             getMoviesListFromApi()
-            MoviesDetailsTableView.reloadData()
+            //MoviesDetailsTableView.reloadData()
         }
         else {
-            showAlert(withtTitle: Alert.title, andMessage: Alert.message)
+            showAlert(withtTitle: Alert.TITLE, andMessage: Alert.MESSAGE)
         }
     }
 }
@@ -54,18 +63,18 @@ extension MoviesDetailsViewController{
         return moviesList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = MoviesDetailsTableView.dequeueReusableCell(withIdentifier: Identifiers.cell, for: indexPath ) as? MoviesDetailsTableViewCell
-        cell?.movieDeatails = moviesList[indexPath.row]
-        cell?.movieImage.layer.cornerRadius = CGFloat(Image.cornerRadius)
-        return cell!
+        let cell1 : MoviesDetailsTableViewCell = MoviesDetailsTableView.dequeueReuseCell(forIndexPath: indexPath)
+        cell1.setUp(data: moviesList[indexPath.row])
+        cell1.movieImage.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
+        return cell1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.currentIndex = indexPath.row
-        self.performSegue(withIdentifier: Identifiers.movieDetailsPageSegue, sender: nil)
+        self.performSegue(withIdentifier: Identifiers.MOVIE_DETAIL_SEGUE, sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Identifiers.movieDetailsPageSegue{
+        if segue.identifier == Identifiers.MOVIE_DETAIL_SEGUE{
             let movieContent = segue.destination as? MoviesOverviewViewController
             movieContent?.movieDetail = moviesList[currentIndex!]
         }
