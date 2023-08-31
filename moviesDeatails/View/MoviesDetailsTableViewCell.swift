@@ -14,11 +14,11 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
-    /*
+    
     var movieDeatails: MovieData?{
         willSet{
             let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
-            //movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
+            movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
             Downloader.shared.getImage(fromUrl: urlString) { image in
                 if let imageObj = image{
                     DispatchQueue.main.async {
@@ -30,7 +30,6 @@ class MoviesDetailsTableViewCell: UITableViewCell{
             movieOverview.text = newValue!.overview
         }
    }
-   */
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,11 +38,16 @@ class MoviesDetailsTableViewCell: UITableViewCell{
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isHidden = false
+        isSelected = false
+        isHighlighted = false
+    }
     
-    
+    /*
     func setUp(data: MovieData?, isLastItem: Bool = false){
 //        if isLastItem {
 //            clearAll()
@@ -81,15 +85,6 @@ class MoviesDetailsTableViewCell: UITableViewCell{
 //        movieTitle.text = nil
 //        movieOverview.text = nil
 //    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        isHidden = false
-        isSelected = false
-        isHighlighted = false
-//        movieImage.image = nil
-//        movieTitle.text = nil
-//        movieOverview.text = nil
-    }
+    */
 
 }
