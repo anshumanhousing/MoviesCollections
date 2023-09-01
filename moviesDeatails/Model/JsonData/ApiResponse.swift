@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+///Get Method of api
 struct Response: Decodable{
     var dates: DatesValue
     var page: Int
@@ -16,6 +16,7 @@ struct Response: Decodable{
     var total_results: Int
 }
  
+///required 
 struct MovieData: Decodable, Equatable{
     var adult: Bool
     var backdrop_path: String
@@ -36,16 +37,4 @@ struct MovieData: Decodable, Equatable{
 struct DatesValue: Decodable{
     var maximum: String
     var minimum: String
-}
-
-struct RequiredDetail: Decodable{
-    var title: String
-    var overview: String
-    var popularity: Double
-    var release_date: String
-    var vote_average: Double
-    var poster_path: String
-}
-struct Result: Decodable{
-    var results: [RequiredDetail]
 }

@@ -15,6 +15,8 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
+    
+    ///set all details automatically 
     var movieDeatails: MovieData?{
         willSet{
             let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
@@ -40,6 +42,8 @@ class MoviesDetailsTableViewCell: UITableViewCell{
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    /// To avoid content Overalap
     override func prepareForReuse() {
         super.prepareForReuse()
         isHidden = false

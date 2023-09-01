@@ -33,12 +33,16 @@ class MoviesOverviewViewController: UIViewController{
         setInterface()
         setAllDetails()
     }
+    
+    ///Set Interfaces
     func setInterface(){
         rating.text = "⭐️  Rating"
         popularity.text = "♥️ Popularity"
         overview.text = "Overview"
         releaseDate.text = "Release Date"
     }
+    
+    ///Set all details Ui
     func setAllDetails(){
         movieTitle.text = movieDetail?.title
         moviePopularity.text = "\(movieDetail!.popularity)"
@@ -57,7 +61,7 @@ class MoviesOverviewViewController: UIViewController{
         moviePoster.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
     }
     
-    
+    ///Navigation topBar Back Button
     func backButton(){
         let backButton = UIBarButtonItem()
         backButton.title = Button.TITLE
