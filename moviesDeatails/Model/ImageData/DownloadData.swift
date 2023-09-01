@@ -15,6 +15,8 @@ class Downloader{
     static let shared = Downloader()
     private init(){}
     
+    var task: URLSessionDataTask! /// global task
+    
     ///Cache the Image Data on Local
     class ImageStore: NSObject {
         static let cache = NSCache<NSString, UIImage>()
@@ -22,9 +24,16 @@ class Downloader{
     
     ///Get image
     func getImage(fromUrl urlString: String, completion: ((_ image: UIImage?) -> ())?) {
+        
+        /// Cancle all previous task to avoid image overlap
+        if let task = task{
+            task.cancel()
+        }
+        /// If image already in Cache 
         if let image = ImageStore.cache.object(forKey: urlString as NSString) {
             completion?(image)
-        }else{
+        }/// If image not in Cache
+        else{
             guard let url = URL(string: urlString) else {
                 completion?(nil)
                 return
@@ -51,5 +60,4 @@ class Downloader{
     }
     
 }
-
 

@@ -113,6 +113,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-b9-FHL">
                                 <rect key="frame" x="16" y="120" width="200" height="350"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-R9-lpc">
                                 <rect key="frame" x="66" y="59" width="279" height="53"/>
@@ -190,7 +191,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ogG-85-57t"/>
-                        <color key="backgroundColor" red="0.83225580506552466" green="0.90985730858824732" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.83225580509999997" green="0.90985730860000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="mR2-D5-ghK" firstAttribute="leading" secondItem="jEd-Dk-T74" secondAttribute="leading" id="10m-Kl-3Oq"/>
                             <constraint firstItem="fTM-nt-0id" firstAttribute="top" secondItem="jEd-Dk-T74" secondAttribute="bottom" constant="8" symbolic="YES" id="9qF-e7-xNk"/>

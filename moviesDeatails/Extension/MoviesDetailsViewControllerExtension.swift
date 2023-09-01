@@ -41,13 +41,12 @@ extension MoviesDetailsViewController{
     }
     
     ///pagination
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == moviesList.count - 1 , pageNo < totalPages{
             pageNo += 1
             getMoviesListFromApi()
         }
-        if pageNo >= totalPages{
+        if indexPath.row == moviesList.count - 1, pageNo >= totalPages{
             showAlert(withtTitle: Alert.TITLE, andMessage: Alert.MESSAGE)
         }
     }

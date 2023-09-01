@@ -20,7 +20,8 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     var movieDeatails: MovieData?{
         willSet{
             let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
-            movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
+            //movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
+
             Downloader.shared.getImage(fromUrl: urlString) { image in
                 if let imageObj = image{
                     DispatchQueue.main.async {
@@ -28,6 +29,9 @@ class MoviesDetailsTableViewCell: UITableViewCell{
                     }
                 }
             }
+            
+           // movieImage.getImage(fromUrl: urlString)
+            movieImage.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
             movieTitle.text = newValue!.title
             movieOverview.text = newValue!.overview
         }

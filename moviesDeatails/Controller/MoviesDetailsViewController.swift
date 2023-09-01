@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// for this class Extension are added
 class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     ///Make MoviesList Observable
@@ -40,15 +40,19 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     ///Fetch Api Data and store Array
     func getMoviesListFromApi(){
+        let loader = alertLoader()
         let apiUrlString = JsonConstants.API_URL + String(describing: pageNo)
         JsonDownloader.shared.apiDataFromAF(fromUrl: apiUrlString) { apiData, pages, error  in
             if let getApiData = apiData {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async{
                     self.dataT = self.dataT + getApiData
                     self.totalPages = pages
                     //self.MoviesDetailsTableView.reloadData()
                 }
             }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.stopLoader(loader: loader)
         }
     }
     
@@ -66,3 +70,6 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
   */
 }
+
+
+///Table View Things added in Extensions
