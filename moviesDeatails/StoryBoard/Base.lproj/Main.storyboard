@@ -230,6 +230,10 @@
                         <outlet property="movieReleaseDate" destination="mR2-D5-ghK" id="KGJ-SK-TXg"/>
                         <outlet property="movieTitle" destination="KDr-R9-lpc" id="JAY-XN-sYo"/>
                         <outlet property="overViewTextField" destination="sRs-at-ntZ" id="4nn-a5-d3U"/>
+                        <outlet property="overview" destination="Px9-af-Ub3" id="PuG-EX-R5G"/>
+                        <outlet property="popularity" destination="yGR-Yd-4FI" id="ikh-1d-EPz"/>
+                        <outlet property="rating" destination="jEd-Dk-T74" id="yhb-1c-4Pf"/>
+                        <outlet property="releaseDate" destination="xeI-Mw-ZWe" id="fmI-kc-Zgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ap-bE-uc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

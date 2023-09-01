@@ -19,7 +19,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
     }
-    let maxCell = 7
+    //let maxCell = 7
     var currentIndex: Int?
     var pageNo: Int = 1
     var totalPages: Int = 0
@@ -34,7 +34,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
     func getMoviesListFromApi(){
         let apiUrlString = JsonConstants.API_URL + String(describing: pageNo)
-        JsonDownloader.shared.apiData(fromUrl: apiUrlString) { apiData, pages, error  in
+        JsonDownloader.shared.apiDataFromAF(fromUrl: apiUrlString) { apiData, pages, error  in
             if let getApiData = apiData {
                 DispatchQueue.main.async {
                     self.moviesList = self.moviesList + getApiData

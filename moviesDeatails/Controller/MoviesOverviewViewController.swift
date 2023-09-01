@@ -9,7 +9,14 @@ import UIKit
 
 class MoviesOverviewViewController: UIViewController{
     
+    ///Interfaces
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var overview: UILabel!
+    @IBOutlet weak var popularity: UILabel!
+    @IBOutlet weak var rating: UILabel!
     
+    
+    ///Contents
     @IBOutlet weak var overViewTextField: UITextView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
@@ -23,9 +30,15 @@ class MoviesOverviewViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton()
+        setInterface()
         setAllDetails()
     }
-    
+    func setInterface(){
+        rating.text = "⭐️  Rating"
+        popularity.text = "♥️ Popularity"
+        overview.text = "Overview"
+        releaseDate.text = "Release Date"
+    }
     func setAllDetails(){
         movieTitle.text = movieDetail?.title
         moviePopularity.text = "\(movieDetail!.popularity)"
