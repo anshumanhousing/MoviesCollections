@@ -11,6 +11,8 @@ import UIKit
 
  
  class Url{
+     static let shared = Url()
+     private init(){}
      func getURL(urlString: String) -> URL?{
          let url = URL(string: urlString)
          return url
@@ -18,6 +20,8 @@ import UIKit
  }
 
  class NetworkHandler{
+     static let shared = NetworkHandler()
+     private init(){}
      func getUrlData(url: URL, completion: @escaping ((_ data: Data?) -> ()?)){
          URLSession.shared.dataTask(with: url){ (data, response, error) in
              if let error = error {
@@ -48,6 +52,8 @@ import UIKit
  }
  */
  class Decoder{
+     static let shared = Decoder()
+     private init(){}
      func apiDecoder(data: Data) -> Response?{
          let apiData = try? JSONDecoder().decode(Response.self, from: data)
          return apiData
@@ -56,22 +62,16 @@ import UIKit
 
 
  class MovieDataBase{
-     let urlhandler: Url
-     let jsonHandler: NetworkHandler
-     let jsonDecoder: Decoder
-     init(urlhandler: Url, jsonHandler: NetworkHandler, jsonDecoder: Decoder) {
-         self.urlhandler = urlhandler
-         self.jsonHandler = jsonHandler
-         self.jsonDecoder = jsonDecoder
-     }
+     static let shared = MovieDataBase()
+     private init(){}
      func getMoviesList(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int) -> ())?){
-         guard let url = urlhandler.getURL(urlString: urlString) else{
+         guard let url = Url.shared.getURL(urlString: urlString) else{
              return
          }
          var data: Data?
-         jsonHandler.getUrlData(url: url) { data1 in
+         NetworkHandler.shared.getUrlData(url: url) { data1 in
              data = data1
-             let jsonData = self.jsonDecoder.apiDecoder(data: data!)
+             let jsonData = Decoder.shared.apiDecoder(data: data!)
              let movieData = jsonData?.results as [MovieData]?
              let t: Int = jsonData?.total_pages ?? 0
              completion!(movieData, t)
