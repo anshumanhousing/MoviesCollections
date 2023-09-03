@@ -8,6 +8,7 @@
 import Foundation
 
 import UIKit
+import Alamofire
 
 
 class JsonDownloader{
@@ -35,4 +36,19 @@ class JsonDownloader{
             }
         }.resume()
      }
+    func apiDataFromAF(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int, _ error: String?) -> ())?){
+        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).response{ data in
+            guard let data = data.data else {
+                return
+            }
+            do {
+                guard let apiData = try? JSONDecoder().decode(Response.self, from: data) else{
+                    return
+                }
+                if let movieData = apiData.results as [MovieData]?{
+                    completion!(movieData, apiData.total_pages, nil)
+                }
+            }
+        }
+    }
 }
