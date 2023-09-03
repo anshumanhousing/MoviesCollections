@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175954E32AA4756200C0B11C /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175954E22AA4756200C0B11C /* NetworkManeger.swift */; };
 		176198D12AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */; };
 		176198D52AA2321700970AC3 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D42AA2321700970AC3 /* ImageView.swift */; };
 		176198D72AA2359C00970AC3 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D62AA2359C00970AC3 /* ActivityLoader.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		175954E22AA4756200C0B11C /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
 		176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewControllerExtension.swift; sourceTree = "<group>"; };
 		176198D42AA2321700970AC3 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		176198D62AA2359C00970AC3 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				1781F6E62A9A726900D9B97E /* ImageData */,
 				1781F6E32A9A71D900D9B97E /* JsonData */,
+				175954E22AA4756200C0B11C /* NetworkManeger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				176198D52AA2321700970AC3 /* ImageView.swift in Sources */,
 				17BB55162A94B60900BAF159 /* MoviesDetailsTableViewCell.swift in Sources */,
 				17BB551E2A94DAAE00BAF159 /* DownloadData.swift in Sources */,
+				175954E32AA4756200C0B11C /* NetworkManeger.swift in Sources */,
 				17DE06282A9E218C000658BF /* UITableView.swift in Sources */,
 				1781F6DD2A9A705400D9B97E /* UIViewController.swift in Sources */,
 				17BB55182A94B65300BAF159 /* ApiResponse.swift in Sources */,
