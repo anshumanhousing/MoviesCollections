@@ -42,7 +42,7 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     func getMoviesListFromApi(){
         let loader = alertLoader()
         let apiUrlString = JsonConstants.API_URL + String(describing: pageNo)
-        MovieDataBase.init(urlhandler: Url(), jsonHandler: NetworkHandler(), jsonDecoder: Decoder()).getMoviesList(fromUrl: apiUrlString) { apiData, pages in
+        MovieDataBase.shared.getMoviesList(fromUrl: apiUrlString) { apiData, pages in
             if let getApiData = apiData {
                 DispatchQueue.main.async{
                     self.dataT = self.dataT + getApiData
