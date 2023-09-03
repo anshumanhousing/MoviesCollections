@@ -10,6 +10,8 @@ import UIKit
 
 
 extension UITableView {
+    
+  /// For Cell Reuse 
   func dequeueReuseCell<cell: UITableViewCell>(forIndexPath indexPath: IndexPath) -> cell {
       return dequeueReusableCell(withIdentifier: Identifiers.CELL_IDENTIFIER,
       for: indexPath) as! cell

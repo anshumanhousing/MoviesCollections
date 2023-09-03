@@ -15,10 +15,13 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
+    
+    ///set all details automatically 
     var movieDeatails: MovieData?{
         willSet{
             let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
-            movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
+            //movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
+
             Downloader.shared.getImage(fromUrl: urlString) { image in
                 if let imageObj = image{
                     DispatchQueue.main.async {
@@ -26,6 +29,9 @@ class MoviesDetailsTableViewCell: UITableViewCell{
                     }
                 }
             }
+            
+           // movieImage.getImage(fromUrl: urlString)
+            movieImage.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
             movieTitle.text = newValue!.title
             movieOverview.text = newValue!.overview
         }
@@ -40,6 +46,8 @@ class MoviesDetailsTableViewCell: UITableViewCell{
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    /// To avoid content Overalap
     override func prepareForReuse() {
         super.prepareForReuse()
         isHidden = false

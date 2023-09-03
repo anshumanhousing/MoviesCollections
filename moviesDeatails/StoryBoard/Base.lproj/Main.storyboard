@@ -17,18 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yQ2-hX-qV7">
-                                <rect key="frame" x="0.0" y="91" width="393" height="761"/>
+                                <rect key="frame" x="0.0" y="157" width="393" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                <button key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AeC-oH-rIz">
-                                    <rect key="frame" x="0.0" y="182" width="393" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="More"/>
-                                    <connections>
-                                        <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t74-iB-2Ca"/>
-                                    </connections>
-                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="104" id="STe-bi-tkx" customClass="MoviesDetailsTableViewCell" customModule="moviesDeatails" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="104"/>
@@ -76,12 +67,26 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1QZ-jI-vKP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jjW-nX-zI7"/>
+                                </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search Movies" translatesAutoresizingMaskIntoConstraints="NO" id="2VL-HZ-A6I">
+                                <rect key="frame" x="0.0" y="94" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C6J-fO-iwZ"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.79438576307016306" green="0.82834919338703694" blue="0.838720821228224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="yQ2-hX-qV7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-12" id="79u-XE-sfm"/>
+                            <constraint firstItem="2VL-HZ-A6I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4y0-4x-0VE"/>
+                            <constraint firstItem="yQ2-hX-qV7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="54" id="79u-XE-sfm"/>
+                            <constraint firstItem="2VL-HZ-A6I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FAX-Z5-t2B"/>
+                            <constraint firstItem="2VL-HZ-A6I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="94" id="ReP-CY-fDr"/>
                             <constraint firstItem="yQ2-hX-qV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WNV-U2-Upj"/>
                             <constraint firstItem="yQ2-hX-qV7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eQO-oV-5Qw"/>
                             <constraint firstAttribute="bottom" secondItem="yQ2-hX-qV7" secondAttribute="bottom" id="yml-1r-wKZ"/>
@@ -90,6 +95,7 @@
                     <navigationItem key="navigationItem" title="Movies Collection" id="GtJ-y5-tWw" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
                         <outlet property="MoviesDetailsTableView" destination="yQ2-hX-qV7" id="DpW-AS-5fC"/>
+                        <outlet property="searchBar" destination="2VL-HZ-A6I" id="8lh-Sn-Qc5"/>
                         <segue destination="aut-OV-qIT" kind="show" identifier="movieDetailsSegue" id="lBs-DW-aQe"/>
                     </connections>
                 </viewController>
@@ -107,6 +113,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-b9-FHL">
                                 <rect key="frame" x="16" y="120" width="200" height="350"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-R9-lpc">
                                 <rect key="frame" x="66" y="59" width="279" height="53"/>
@@ -184,7 +191,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ogG-85-57t"/>
-                        <color key="backgroundColor" red="0.83225580506552466" green="0.90985730858824732" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.83225580509999997" green="0.90985730860000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="mR2-D5-ghK" firstAttribute="leading" secondItem="jEd-Dk-T74" secondAttribute="leading" id="10m-Kl-3Oq"/>
                             <constraint firstItem="fTM-nt-0id" firstAttribute="top" secondItem="jEd-Dk-T74" secondAttribute="bottom" constant="8" symbolic="YES" id="9qF-e7-xNk"/>
@@ -230,6 +237,10 @@
                         <outlet property="movieReleaseDate" destination="mR2-D5-ghK" id="KGJ-SK-TXg"/>
                         <outlet property="movieTitle" destination="KDr-R9-lpc" id="JAY-XN-sYo"/>
                         <outlet property="overViewTextField" destination="sRs-at-ntZ" id="4nn-a5-d3U"/>
+                        <outlet property="overview" destination="Px9-af-Ub3" id="PuG-EX-R5G"/>
+                        <outlet property="popularity" destination="yGR-Yd-4FI" id="ikh-1d-EPz"/>
+                        <outlet property="rating" destination="jEd-Dk-T74" id="yhb-1c-4Pf"/>
+                        <outlet property="releaseDate" destination="xeI-Mw-ZWe" id="fmI-kc-Zgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ap-bE-uc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
