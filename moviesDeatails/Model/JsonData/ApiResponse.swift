@@ -69,7 +69,7 @@ struct MovieData: Decodable, Equatable{
      */
 }
 
-struct DatesValue: Decodable, Encodable{
+struct DatesValue: Decodable{
     var maximum: String
     var minimum: String
     /*

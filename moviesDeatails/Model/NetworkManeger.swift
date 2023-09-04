@@ -4,12 +4,9 @@
 //
 //  Created by Anshuman Bhargava on 03/09/23.
 //
-
-
 import Foundation
 import UIKit
 
- 
  class Url{
      static let shared = Url()
      private init(){}
@@ -43,14 +40,6 @@ import UIKit
      }
  }
 
-/*
- class Decoder{
-     func apiDecoder<T: Codable>(data: Data, resultType: T.Type) -> T?{
-         let apiData = try? JSONDecoder().decode(resultType.self, from: data)
-         return apiData
-     }
- }
- */
  class Decoder{
      static let shared = Decoder()
      private init(){}
@@ -61,33 +50,22 @@ import UIKit
  }
 
 
- class MovieDataBase{
-     static let shared = MovieDataBase()
-     private init() {
-     }
-     func getMoviesList(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int) -> ())?){
-         guard let url = Url.shared.getURL(urlString: urlString) else{
-             return
-         }
-         var data: Data?
-         NetworkHandler.shared.getUrlData(url: url) { data1 in
-             data = data1
-             let jsonData = Decoder.shared.apiDecoder(type: Response.self ,data: data!)
-             let movieData = jsonData?.results as [MovieData]?
-             let t: Int = jsonData?.total_pages ?? 0
-             completion!(movieData, t)
-         }
-         /*
-         guard let jsonData = jsonDecoder.apiDecoder(data: data!) else{
-             return
-         }
-         guard let movieData = jsonData.results as [MovieData]? else{
-             return
-         }
-         completion!(movieData, jsonData.total_pages)
-          */
-     }
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

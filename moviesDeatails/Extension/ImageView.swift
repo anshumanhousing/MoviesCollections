@@ -48,3 +48,13 @@ extension UIImageView{
         }
     }
 }
+
+
+extension String{
+    func correctUrl() -> Bool {
+        guard let url = URL(string: self) else {
+            return false
+        }
+        return UIApplication.shared.canOpenURL(url)
+    }
+}
