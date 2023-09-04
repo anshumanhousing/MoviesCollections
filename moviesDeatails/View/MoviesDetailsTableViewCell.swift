@@ -21,11 +21,13 @@ class MoviesDetailsTableViewCell: UITableViewCell{
         willSet{
             let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
             //movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
-
+            let loader = activity.getActivityIndicator()
+            loader.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
             Downloader.shared.getImage(fromUrl: urlString) { image in
                 if let imageObj = image{
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async{
                         self.movieImage.image = imageObj
+                        loader.stopAnimating()
                     }
                 }
             }

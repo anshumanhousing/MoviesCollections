@@ -54,8 +54,8 @@ import UIKit
  class Decoder{
      static let shared = Decoder()
      private init(){}
-     func apiDecoder(data: Data) -> Response?{
-         let apiData = try? JSONDecoder().decode(Response.self, from: data)
+     func apiDecoder<T: Codable>(type: T.Type, data: Data) -> T?{
+         let apiData = try? JSONDecoder().decode(T.self, from: data)
          return apiData
      }
  }
@@ -63,7 +63,8 @@ import UIKit
 
  class MovieDataBase{
      static let shared = MovieDataBase()
-     private init(){}
+     private init() {
+     }
      func getMoviesList(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int) -> ())?){
          guard let url = Url.shared.getURL(urlString: urlString) else{
              return
@@ -71,7 +72,7 @@ import UIKit
          var data: Data?
          NetworkHandler.shared.getUrlData(url: url) { data1 in
              data = data1
-             let jsonData = Decoder.shared.apiDecoder(data: data!)
+             let jsonData = Decoder.shared.apiDecoder(type: Response.self ,data: data!)
              let movieData = jsonData?.results as [MovieData]?
              let t: Int = jsonData?.total_pages ?? 0
              completion!(movieData, t)
