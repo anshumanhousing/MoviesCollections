@@ -36,10 +36,10 @@ class MoviesOverviewViewController: UIViewController{
     
     ///Set Interfaces
     func setInterface(){
-        rating.text = "⭐️  Rating"
-        popularity.text = "♥️ Popularity"
-        overview.text = "Overview"
-        releaseDate.text = "Release Date"
+        rating.text = Interfaces.rating
+        popularity.text = Interfaces.popularity
+        overview.text = Interfaces.overview
+        releaseDate.text = Interfaces.releaseDate
     }
     
     ///Set all details Ui
