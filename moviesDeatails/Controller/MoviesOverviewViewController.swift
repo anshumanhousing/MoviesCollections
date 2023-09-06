@@ -45,11 +45,14 @@ class MoviesOverviewViewController: UIViewController{
     ///Set all details Ui
     func setAllDetails(){
         movieTitle.text = movieDetail?.title
-        moviePopularity.text = "\(movieDetail!.popularity)"
-        movieRating.text = "\(movieDetail!.vote_average)"
+        moviePopularity.text = "\(movieDetail?.popularity ?? 1100.006)"
+        movieRating.text = "\(movieDetail?.vote_average ?? 5.0)"
         movieReleaseDate.text = movieDetail?.release_date
         overViewTextField.text = movieDetail?.overview
-        let urlString = String(JsonConstants.POSTER_HEADER + movieDetail!.poster_path)
+        guard let pst_path = movieDetail?.poster_path else{
+            return
+        }
+        let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
         moviePoster.getImage(fromUrl: urlString)
         moviePoster.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
     }

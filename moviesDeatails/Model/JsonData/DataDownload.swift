@@ -33,7 +33,10 @@ class JsonDownloader{
                     return
                 }
                 if let movieData = apiData.results as [MovieData]?{
-                    completion!(movieData, apiData.total_pages, nil)
+                    guard let totalpage = apiData.total_pages else{
+                        return
+                    }
+                    completion!(movieData, totalpage, nil)
                 }
             }
         }.resume()
@@ -50,7 +53,10 @@ class JsonDownloader{
                     return
                 }
                 if let movieData = apiData.results as [MovieData]?{
-                    completion!(movieData, apiData.total_pages, nil)
+                    guard let totalpage = apiData.total_pages else{
+                        return
+                    }
+                    completion!(movieData, totalpage, nil)
                 }
             }
         }

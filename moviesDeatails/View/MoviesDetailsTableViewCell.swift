@@ -19,7 +19,12 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     ///set all details automatically 
     var movieDeatails: MovieData?{
         willSet{
-            let urlString = String(JsonConstants.POSTER_HEADER + newValue!.poster_path)
+            movieTitle.text = newValue!.title
+            movieOverview.text = newValue!.overview
+            guard let pst_path = newValue?.poster_path else{
+                return
+            }
+            let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
             //movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
             let loader = activity.getActivityIndicator()
             loader.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
@@ -34,8 +39,6 @@ class MoviesDetailsTableViewCell: UITableViewCell{
             
            // movieImage.getImage(fromUrl: urlString)
             movieImage.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
-            movieTitle.text = newValue!.title
-            movieOverview.text = newValue!.overview
         }
    }
     
