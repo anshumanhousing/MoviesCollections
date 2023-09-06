@@ -32,3 +32,11 @@ struct Image{
     static let SYSTEM_IMAGE_NAME: String = "photo"
     static let CORNER_RADIUS: Int = 15
 }
+
+
+struct Interfaces{
+    static let rating: String = "⭐️  Rating"
+    static let popularity: String = "♥️ Popularity"
+    static let overview: String = "Overview"
+    static let releaseDate: String = "Release Date"
+}
