@@ -23,12 +23,10 @@ import UIKit
          URLSession.shared.dataTask(with: url){ (data, response, error) in
              if let error = error {
                  print("\(error)")
-                 //completion(nil)
                  return
              }
              guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                  print("Status code not 200")
-                 //completion(nil)
                  return
              }
              if let data = data {
