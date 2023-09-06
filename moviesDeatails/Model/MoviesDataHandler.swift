@@ -13,9 +13,6 @@ protocol MoviesHandler{
 }
 
 class MovieDataBase: MoviesHandler{
-     static let shared = MovieDataBase()
-     private init() {
-     }
      func getMoviesList(fromUrl urlString: String, completion: ((_ apiData: [MovieData]?, _ totalPages: Int) -> ())?){
          guard let url = Url.shared.getURL(urlString: urlString) else{
              return
@@ -26,25 +23,51 @@ class MovieDataBase: MoviesHandler{
              let jsonData = Decoder.shared.apiDecoder(type: Response.self ,data: data!)
              let movieData = jsonData?.results as [MovieData]?
              let t: Int = jsonData?.total_pages ?? 0
-             completion!(movieData, t)
+             completion?(movieData, t)
          }
      }
  }
 
 
 class LocalMoviesData: MoviesHandler{
-    static let shared = LocalMoviesData()
+    func getMoviesList(fromUrl urlString: String, completion: (([MovieData]?, Int) -> ())?) {
+        print(1)
+        guard let url = Bundle.main.url(forResource: "Local", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let model = Decoder.shared.apiDecoder(type: Response.self ,data: data),
+              let movieData = model.results as [MovieData]? else{
+            return
+        }
+        completion?(movieData, 1)
+    }
+}
+
+class Movie{
+    let moviesHandler: MoviesHandler
+    init(moviesHandler: MoviesHandler) {
+        self.moviesHandler = moviesHandler
+    }
+    func getMovie(fromUrl urlString: String, completion: (([MovieData]?, Int) -> ())?){
+        moviesHandler.getMoviesList(fromUrl: urlString) { apiData, totalPages in
+            completion?(apiData,totalPages)
+        }
+    }
+}
+
+
+class DataGet{
+    static let shared = DataGet()
     private init() {
     }
-    func getMoviesList(fromUrl urlString: String, completion: (([MovieData]?, Int) -> ())?) {
-        if urlString.correctUrl() == false{
-            guard let url = Bundle.main.url(forResource: "Local", withExtension: "json"),
-                  let data = try? Data(contentsOf: url),
-                  let model = Decoder.shared.apiDecoder(type: Response.self ,data: data),
-                  let movieData = model.results as [MovieData]?else{
-                return
+    func getMovieData(fromUrl urlString: String, completion: (([MovieData]?, Int) -> ())?){
+        if urlString.correctUrl(){
+            Movie(moviesHandler: MovieDataBase()).getMovie(fromUrl: urlString) {apiData, totalPages in
+                completion?(apiData,totalPages)
             }
-            completion!(movieData, 1)
+        }else{
+            Movie(moviesHandler: LocalMoviesData()).getMovie(fromUrl: urlString) {apiData, totalPages in
+                completion?(apiData,totalPages)
+            }
         }
     }
 }

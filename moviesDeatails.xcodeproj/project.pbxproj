@@ -12,6 +12,7 @@
 		176198D12AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */; };
 		176198D52AA2321700970AC3 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D42AA2321700970AC3 /* ImageView.swift */; };
 		176198D72AA2359C00970AC3 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D62AA2359C00970AC3 /* ActivityLoader.swift */; };
+		176A20342AA86E7A00002A2E /* Local.json in Resources */ = {isa = PBXBuildFile; fileRef = 176A20332AA86E7A00002A2E /* Local.json */; };
 		177ED5362A98EAF300474F6A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177ED5352A98EAF300474F6A /* Constant.swift */; };
 		1781F6DD2A9A705400D9B97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781F6DC2A9A705400D9B97E /* UIViewController.swift */; };
 		1781F6E52A9A722400D9B97E /* DataDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781F6E42A9A722400D9B97E /* DataDownload.swift */; };
@@ -35,7 +36,7 @@
 		176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewControllerExtension.swift; sourceTree = "<group>"; };
 		176198D42AA2321700970AC3 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		176198D62AA2359C00970AC3 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
-		176A20312AA82F2100002A2E /* Local.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Local.geojson; sourceTree = "<group>"; };
+		176A20332AA86E7A00002A2E /* Local.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Local.json; path = ../../../../../../Local.json; sourceTree = "<group>"; };
 		177ED5352A98EAF300474F6A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1781F6DC2A9A705400D9B97E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		1781F6E42A9A722400D9B97E /* DataDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownload.swift; sourceTree = "<group>"; };
@@ -155,8 +156,8 @@
 		1781F6EA2A9A751A00D9B97E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				176A20332AA86E7A00002A2E /* Local.json */,
 				17BB550A2A94AA9100BAF159 /* Assets.xcassets */,
-				176A20312AA82F2100002A2E /* Local.geojson */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -273,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BB550E2A94AA9100BAF159 /* LaunchScreen.storyboard in Resources */,
+				176A20342AA86E7A00002A2E /* Local.json in Resources */,
 				17BB550B2A94AA9100BAF159 /* Assets.xcassets in Resources */,
 				17BB55092A94AA9000BAF159 /* Main.storyboard in Resources */,
 			);
