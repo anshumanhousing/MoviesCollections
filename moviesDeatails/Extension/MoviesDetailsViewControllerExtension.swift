@@ -17,7 +17,7 @@ extension MoviesDetailsViewController{
     
     ///deque a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = MoviesDetailsTableView.dequeueReuseCell(forIndexPath: indexPath) as? MoviesDetailsTableViewCell else{
+        guard let cell = MoviesDetailsTableView.dequeueReuseCell(withIdentifiers: Identifiers.CELL_IDENTIFIER, forIndexPath: indexPath) as? MoviesDetailsTableViewCell else{
             return UITableViewCell()
         }
         cell.movieDeatails = moviesList[indexPath.row]
