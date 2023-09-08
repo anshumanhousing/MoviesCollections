@@ -31,7 +31,6 @@ class MovieDataBase: MoviesHandler{
 
 class LocalMoviesData: MoviesHandler{
     func getMoviesList(fromUrl urlString: String, completion: (([MovieData]?, Int) -> ())?) {
-        print(1)
         guard let url = Bundle.main.url(forResource: "Local", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let model = Decoder.shared.apiDecoder(type: Response.self ,data: data),

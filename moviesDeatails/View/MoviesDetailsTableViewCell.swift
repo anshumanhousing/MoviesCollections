@@ -58,7 +58,33 @@ class MoviesDetailsTableViewCell: UITableViewCell{
         isHidden = false
         isSelected = false
         isHighlighted = false
+        self.movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
+        imageView?.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*
     func setUp(data: MovieData?, isLastItem: Bool = false){
