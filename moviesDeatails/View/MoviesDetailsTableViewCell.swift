@@ -37,21 +37,6 @@ class MoviesDetailsTableViewCell: UITableViewCell{
                 return
             }
             movieImage.sd_setImage(with: imageURL, placeholderImage: placeHolder)
-            
-            
-            
-            /*
-            Downloader.shared.getImage(fromUrl: urlString) { image in
-                if let imageObj = image{
-                    DispatchQueue.main.async{
-                        self.movieImage.image = imageObj
-                        loader.stopAnimating()
-                    }
-                }
-            }
-            */
-           // movieImage.getImage(fromUrl: urlString)
-           
         }
    }
     
