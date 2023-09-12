@@ -28,11 +28,9 @@ class MoviesDetailsTableViewCell: UITableViewCell{
             }
             let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
             let placeHolder = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
-            let loader = activity.getActivityIndicator()
-            loader.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
             
             
-            
+            //using SDWebImage 
             movieImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             movieImage.sd_imageIndicator?.startAnimatingIndicator()
             guard let imageURL = URL(string: urlString) else{
@@ -70,11 +68,8 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     /// To avoid content Overalap
     override func prepareForReuse() {
         super.prepareForReuse()
-        isHidden = false
-        isSelected = false
-        isHighlighted = false
-        self.movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
-        imageView?.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
+        self.movieImage.image = nil
+        //imageView?.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
     }
     
     

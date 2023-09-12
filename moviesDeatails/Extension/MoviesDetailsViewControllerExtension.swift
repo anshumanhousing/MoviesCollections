@@ -42,7 +42,7 @@ extension MoviesDetailsViewController{
     
     ///pagination
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == moviesList.count - 1 , pageNo < totalPages{
+        if indexPath.row == moviesList.count - 1 , pageNo < totalPages , searchBar.text == "" {
             pageNo += 1
             getMoviesListFromApi()
         }
@@ -72,7 +72,6 @@ extension MoviesDetailsViewController{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
             moviesList = dataT.filter{ $0.title.contains(searchText)}
-            
         }
         else{
             moviesList = dataT
