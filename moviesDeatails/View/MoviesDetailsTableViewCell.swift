@@ -33,6 +33,7 @@ class MoviesDetailsTableViewCell: UITableViewCell{
                 return
             }
             movieImage.sd_setImage(with: imageURL, placeholderImage: placeHolder)
+            //movieImage.getImage(fromUrl: imageURL)
         }
    }
     
