@@ -55,15 +55,7 @@ class MoviesOverviewViewController: UIViewController{
             return
         }
         let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
-        let placeHolder = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
-        moviePoster.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge ///SDWebImage
-        moviePoster.sd_imageIndicator?.startAnimatingIndicator()
-        guard let imageURL = Url.shared.getURL(urlString: urlString) else{
-            return
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.moviePoster.sd_setImage(with: imageURL, placeholderImage: placeHolder)
-        }
+        moviePoster.getImage(fromUrl: urlString)
     }
     
     ///Navigation topBar Back Button
