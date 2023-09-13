@@ -29,7 +29,7 @@ class MoviesDetailsTableViewCell: UITableViewCell{
             //using SDWebImage 
             movieImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             movieImage.sd_imageIndicator?.startAnimatingIndicator()
-            guard let imageURL = URL(string: urlString) else{
+            guard let imageURL = Url.shared.getURL(urlString: urlString) else{
                 return
             }
             movieImage.sd_setImage(with: imageURL, placeholderImage: placeHolder)

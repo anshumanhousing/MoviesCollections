@@ -10,7 +10,6 @@ import UIKit
 
 
 class activity {
-    
     class func getActivityIndicator() -> UIActivityIndicatorView {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 8, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
@@ -19,4 +18,5 @@ class activity {
         return loadingIndicator
     }
 }
+
 
