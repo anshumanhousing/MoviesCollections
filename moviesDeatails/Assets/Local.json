@@ -1,0 +1,401 @@
+{
+    "dates": {
+        "maximum": "2023-09-04",
+        "minimum": "2023-07-18"
+    },
+    "page": 7,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/1jCXk512KPr6MzXEZf7UH4fbtba.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 800787,
+            "original_language": "en",
+            "original_title": "A Good Person",
+            "overview": "Allison's life falls apart following her involvement in a fatal accident. The unlikely relationship she forms with her would-be father-in-law helps her live a life worth living.",
+            "popularity": 25.319,
+            "poster_path": "/6toz74j1OgbQrsZUjgr2Ohs1AsE.jpg",
+            "release_date": "2023-03-23",
+            "title": "A Good Person",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 170
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/xH1fADDlEQMXreGClUCxA0XrJPC.jpg",
+            "genre_ids": [
+                35,
+                10749
+            ],
+            "id": 982271,
+            "original_language": "en",
+            "original_title": "Book Club: The Next Chapter",
+            "overview": "Four best friends take their book club to Italy for the fun girls' trip they never had. When things go off the rails and secrets are revealed, their relaxing vacation turns into a once-in-a-lifetime cross-country adventure.",
+            "popularity": 22.743,
+            "poster_path": "/lXoeOcWWhPpLH1wzTIhOx8jydBo.jpg",
+            "release_date": "2023-05-11",
+            "title": "Book Club: The Next Chapter",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 83
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bk5l7vQKjypgPv74TlLQZzQmpCu.jpg",
+            "genre_ids": [
+                9648,
+                80,
+                18
+            ],
+            "id": 1108211,
+            "original_language": "zh",
+            "original_title": "消失的她",
+            "overview": "He Fei's wife, Li Muzi, disappears during their anniversary trip. When she reappears, he insists that she is not his wife. As Chen Mai, a top lawyer gets involved in this bizarre case, more mysteries start to emerge.",
+            "popularity": 23.602,
+            "poster_path": "/oJ0X8ULclI1fQUXj14VcUFCjvXo.jpg",
+            "release_date": "2023-06-22",
+            "title": "Lost in the Stars",
+            "video": false,
+            "vote_average": 6,
+            "vote_count": 32
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/1C61KrQDmQ1vMxBllNE1b6Xpan7.jpg",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "id": 1121612,
+            "original_language": "zh",
+            "original_title": "孤注一掷",
+            "overview": "A depressed programmer and a model decide to seek gold as a seemingly good job opportunity, but they inadvertently become involved in a well-planned Internet scam.",
+            "popularity": 28.369,
+            "poster_path": "/gjyqQD5LsNOiVIXuczw9joqjiKQ.jpg",
+            "release_date": "2023-08-05",
+            "title": "No More Bets",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 7
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kR4TuKHWhrDhEpEJ0bAvrGjjaWz.jpg",
+            "genre_ids": [
+                18,
+                36,
+                10749
+            ],
+            "id": 840111,
+            "original_language": "fr",
+            "original_title": "L'Envol",
+            "overview": "In northern France, Juliette grows up alone with her father, Raphaël, a veteran of the First World War. Passionate about singing and music, one summer the lonely young girl meets a magician who promises that scarlet sails will one day take her away from her village.",
+            "popularity": 23.849,
+            "poster_path": "/s6kr3P8OuskO4g4yqSAhb1hR8Uk.jpg",
+            "release_date": "2023-01-11",
+            "title": "Scarlet",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 33
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/747dgDfL5d8esobk7h4odaOFhUq.jpg",
+            "genre_ids": [
+                80,
+                18,
+                53
+            ],
+            "id": 275,
+            "original_language": "en",
+            "original_title": "Fargo",
+            "overview": "Jerry, a small-town Minnesota car salesman is bursting at the seams with debt... but he's got a plan. He's going to hire two thugs to kidnap his wife in a scheme to collect a hefty ransom from his wealthy father-in-law. It's going to be a snap and nobody's going to get hurt... until people start dying. Enter Police Chief Marge, a coffee-drinking, parka-wearing - and extremely pregnant - investigator who'll stop at nothing to get her man. And if you think her small-time investigative skills will give the crooks a run for their ransom... you betcha!",
+            "popularity": 18.851,
+            "poster_path": "/rt7cpEr1uP6RTZykBFhBTcRaKvG.jpg",
+            "release_date": "1996-03-08",
+            "title": "Fargo",
+            "video": false,
+            "vote_average": 7.9,
+            "vote_count": 7240
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/o1o3KOkyoClF0LGzmPZalad9qQG.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 971699,
+            "original_language": "en",
+            "original_title": "Blue Jean",
+            "overview": "Jean, a PE teacher, is forced to live a double life. When a new student arrives and threatens to expose her sexuality, Jean is pushed to extreme lengths to keep her job and her integrity.",
+            "popularity": 28.628,
+            "poster_path": "/9z36SzknysvC5EnWK8hOnlCW6rA.jpg",
+            "release_date": "2023-02-10",
+            "title": "Blue Jean",
+            "video": false,
+            "vote_average": 7.1,
+            "vote_count": 55
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/r3UVacRPvsTjeXdOekFzY0B2iDf.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 977013,
+            "original_language": "en",
+            "original_title": "Haunting of the Queen Mary",
+            "overview": "When photographers Erin and Patrick are brought aboard the ship with their young son Lukas, they unleash a series of events that entwines their family with the ship’s dark past. As the terror unfolds around them they begin to realise there is more to this sumptuous ocean liner than meets the eye: its remarkable legacy masking violent secrets.",
+            "popularity": 16.11,
+            "poster_path": "/1uNMAlNanIQohAofjyyad2WVCdk.jpg",
+            "release_date": "2023-07-21",
+            "title": "Haunting of the Queen Mary",
+            "video": false,
+            "vote_average": 5.7,
+            "vote_count": 18
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/pzvnnpJmCtSZMw44WYVEqldhn17.jpg",
+            "genre_ids": [
+                35,
+                10749
+            ],
+            "id": 1143319,
+            "original_language": "en",
+            "original_title": "Puppy Love",
+            "overview": "After a disastrous first date, wild-child Nicole and socially-anxious Max vow to lose each other’s numbers until they learn that their dogs found a love match, and now puppies are on the way! The hilariously mismatched Nicole and Max are forced to become responsible co-parents, but may end up finding love themselves.",
+            "popularity": 21.978,
+            "poster_path": "/oTc03izWZ9UdD3y0HegVV2M0s0J.jpg",
+            "release_date": "2023-08-22",
+            "title": "Puppy Love",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 37
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/oghHR3X0hIcvs7xqyoFjA0GAZWn.jpg",
+            "genre_ids": [
+                53
+            ],
+            "id": 1002338,
+            "original_language": "is",
+            "original_title": "Napóleonsskjölin",
+            "overview": "A modern-day lawyer is sucked into an international conspiracy after being accused of a murder she didn't commit. Her only chance of freedom lies in uncovering the secret of an old German WWII aeroplane, long buried deep beneath the ice, before the CIA.",
+            "popularity": 18.852,
+            "poster_path": "/j2Or0w69bpPXrmkE0hpTzw6hzsr.jpg",
+            "release_date": "2023-01-26",
+            "title": "Operation Napoleon",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 9
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/WyGsyzSwGN4ZY9ZG2SJzGM4UPe.jpg",
+            "genre_ids": [
+                28,
+                18,
+                53
+            ],
+            "id": 885331,
+            "original_language": "hi",
+            "original_title": "गदर २",
+            "overview": "When Tara Singh goes missing during a skirmish and is believed to be captured in Pakistan, his son Jeete sets out to rescue him and enters a labyrinth from which they both must escape at all costs.",
+            "popularity": 25.806,
+            "poster_path": "/ipoUI3FzVTczg2r8mYxNlE5SsMh.jpg",
+            "release_date": "2023-08-11",
+            "title": "Gadar 2",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 27
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zzbEAP5d1Ci0QKitpaA8PykHIj4.jpg",
+            "genre_ids": [
+                35,
+                18
+            ],
+            "id": 926008,
+            "original_language": "en",
+            "original_title": "The Beanie Bubble",
+            "overview": "Ty was a frustrated toy salesman until his collaboration with three women turned his stuffed animals into a defining ’90s trend. This behind-the-scenes look at history’s biggest toy craze is a wild story about what—and who—is valued in this world.",
+            "popularity": 20.949,
+            "poster_path": "/9YDW8dCrQyRpppK5985hKY1Mc8X.jpg",
+            "release_date": "2023-07-21",
+            "title": "The Beanie Bubble",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 67
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zMtkSJfVuiv2I1lKkEnPhBiQagx.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 1168918,
+            "original_language": "en",
+            "original_title": "The Making of Indiana Jones and the Dial of Destiny",
+            "overview": "Join the adventure with the cast and crew, showcasing new characters, stunts, music, locations, production design, and visual effects in five chapters that chart the making of Indiana Jones and the Dial of Destiny.",
+            "popularity": 18.711,
+            "poster_path": "/nJeiS9Zi1GTKD7JXFHyVJ1Edd0H.jpg",
+            "release_date": "2023-08-29",
+            "title": "The Making of Indiana Jones and the Dial of Destiny",
+            "video": false,
+            "vote_average": 8.3,
+            "vote_count": 3
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3Feq4UV4p2gU6dShAYfveqwWAEf.jpg",
+            "genre_ids": [
+                18,
+                80,
+                9648
+            ],
+            "id": 915935,
+            "original_language": "fr",
+            "original_title": "Anatomie d’une chute",
+            "overview": "Sandra, Samuel and their visually impaired son Daniel have been living in a remote mountain location for the past year. When Samuel is found dead outside the house, an investigation for death in suspicious circumstances is launched. Amidst the uncertainty, Sandra is indicted: was it suicide or homicide? A year later Daniel attends his mother’s trial, a veritable dissection of his parents’ relationship.",
+            "popularity": 27.913,
+            "poster_path": "/AlbySG5o87A3gEkeaMhUADeDpvZ.jpg",
+            "release_date": "2023-08-23",
+            "title": "Anatomy of a Fall",
+            "video": false,
+            "vote_average": 8,
+            "vote_count": 100
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/b4aXVjEH4PoMxubmpowanfdaVO7.jpg",
+            "genre_ids": [
+                35,
+                80,
+                10749
+            ],
+            "id": 919573,
+            "original_language": "fr",
+            "original_title": "L'Innocent",
+            "overview": "Sylvie, a nearly sixty-year-old woman, has fallen in love with Michel, a thug she marries in prison. The couple dream of starting again with a clean slate by opening a flower shop. But Sylvie’s son Abel, convinced that Michel will fall into a life of crime, disapproves of this relationship.",
+            "popularity": 16.464,
+            "poster_path": "/e0Hhtzg2bffy1PxzM1Wv8VF4ca9.jpg",
+            "release_date": "2022-10-12",
+            "title": "The Innocent",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 252
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ojWxM1osQBsK340nlJKfAkicMCi.jpg",
+            "genre_ids": [
+                35,
+                9648,
+                80,
+                53
+            ],
+            "id": 1034335,
+            "original_language": "th",
+            "original_title": "เมอร์เด้อเหรอ ฆาตกรรมอิหยังวะ",
+            "overview": "After a series of deaths in a small provincial town, a determined detective attempts to uncover the killer — and British expat Earl is the prime suspect.",
+            "popularity": 19.488,
+            "poster_path": "/csZRHobe0aPYOGobhLjTnB6S2L9.jpg",
+            "release_date": "2023-07-27",
+            "title": "The Murderer",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 22
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hvqNAz3cq48sh9GKxu4lPiogfBo.jpg",
+            "genre_ids": [
+                28,
+                53,
+                80
+            ],
+            "id": 996154,
+            "original_language": "en",
+            "original_title": "Black Lotus",
+            "overview": "An ex-special forces operative wages a one man war through the streets of Amsterdam to rescue his friend's daughter from the local crime syndicate.",
+            "popularity": 23.22,
+            "poster_path": "/y3AeW200hqGLxoPyHMDHpzudylz.jpg",
+            "release_date": "2023-04-12",
+            "title": "Black Lotus",
+            "video": false,
+            "vote_average": 6,
+            "vote_count": 17
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/meGnzFp9nsMUwdRPux7yei8LnFz.jpg",
+            "genre_ids": [
+                53,
+                35,
+                10749
+            ],
+            "id": 1068385,
+            "original_language": "es",
+            "original_title": "Doble discurso",
+            "overview": "",
+            "popularity": 15.028,
+            "poster_path": "/a3mMwp42qXaA4DLNcXvNO0u01Pi.jpg",
+            "release_date": "2023-07-27",
+            "title": "Doble discurso",
+            "video": false,
+            "vote_average": 7.9,
+            "vote_count": 9
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/8nLiWpgxOfH15FjBgTvvcah3ZUb.jpg",
+            "genre_ids": [
+                28,
+                53,
+                80,
+                35
+            ],
+            "id": 1015963,
+            "original_language": "en",
+            "original_title": "High Heat",
+            "overview": "When the local mafia shows up to burn down her restaurant, Ana, a chef with a meticulous past, defends her turf and proves her knife skills both in and out of the kitchen.",
+            "popularity": 21.807,
+            "poster_path": "/mmD0NVdhiRiCu64YKem5GK5PSfy.jpg",
+            "release_date": "2022-12-16",
+            "title": "High Heat",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 92
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uHmvk8FnoxpgujDU0RIXLkv2fNt.jpg",
+            "genre_ids": [
+                16,
+                35,
+                12,
+                10751
+            ],
+            "id": 573164,
+            "original_language": "es",
+            "original_title": "Un rescate de huevitos",
+            "overview": "Toto and his friends must rescue his egg children after they're taken away for a gourmet food event in Africa.",
+            "popularity": 19.696,
+            "poster_path": "/7he8glf7j41d3amgf4Nbpt3HVq1.jpg",
+            "release_date": "2021-08-12",
+            "title": "An Egg Rescue",
+            "video": false,
+            "vote_average": 7.9,
+            "vote_count": 361
+        }
+    ],
+    "total_pages": 89,
+    "total_results": 1768
+}

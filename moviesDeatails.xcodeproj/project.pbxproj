@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1744A1D52AA998BC0002E51D /* Local.json in Resources */ = {isa = PBXBuildFile; fileRef = 1744A1D42AA998BC0002E51D /* Local.json */; };
+		175954E32AA4756200C0B11C /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175954E22AA4756200C0B11C /* NetworkManeger.swift */; };
+		175E5CE82AA5D7F10089FF0C /* MoviesDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E5CE72AA5D7F10089FF0C /* MoviesDataHandler.swift */; };
+		176198D12AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */; };
+		176198D72AA2359C00970AC3 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176198D62AA2359C00970AC3 /* ActivityLoader.swift */; };
 		177ED5362A98EAF300474F6A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177ED5352A98EAF300474F6A /* Constant.swift */; };
 		1781F6DD2A9A705400D9B97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781F6DC2A9A705400D9B97E /* UIViewController.swift */; };
-		1781F6E52A9A722400D9B97E /* DataDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1781F6E42A9A722400D9B97E /* DataDownload.swift */; };
 		17BB55022A94AA9000BAF159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB55012A94AA9000BAF159 /* AppDelegate.swift */; };
 		17BB55042A94AA9000BAF159 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB55032A94AA9000BAF159 /* SceneDelegate.swift */; };
 		17BB55092A94AA9000BAF159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BB55072A94AA9000BAF159 /* Main.storyboard */; };
@@ -19,15 +23,18 @@
 		17BB55182A94B65300BAF159 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB55172A94B65300BAF159 /* ApiResponse.swift */; };
 		17BB551A2A94B72F00BAF159 /* MoviesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB55192A94B72F00BAF159 /* MoviesDetailsViewController.swift */; };
 		17BB551C2A94B75100BAF159 /* MoviesOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB551B2A94B75100BAF159 /* MoviesOverviewViewController.swift */; };
-		17BB551E2A94DAAE00BAF159 /* DownloadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BB551D2A94DAAE00BAF159 /* DownloadData.swift */; };
 		17DE06282A9E218C000658BF /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE06272A9E218C000658BF /* UITableView.swift */; };
 		5FEEB69F2189818A92ECE63F /* Pods_moviesDeatails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61321596C77561E17F472A8E /* Pods_moviesDeatails.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1744A1D42AA998BC0002E51D /* Local.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Local.json; path = ../../../Local.json; sourceTree = "<group>"; };
+		175954E22AA4756200C0B11C /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
+		175E5CE72AA5D7F10089FF0C /* MoviesDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDataHandler.swift; sourceTree = "<group>"; };
+		176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewControllerExtension.swift; sourceTree = "<group>"; };
+		176198D62AA2359C00970AC3 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
 		177ED5352A98EAF300474F6A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1781F6DC2A9A705400D9B97E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		1781F6E42A9A722400D9B97E /* DataDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownload.swift; sourceTree = "<group>"; };
 		17BB54FE2A94AA9000BAF159 /* moviesDeatails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moviesDeatails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BB55012A94AA9000BAF159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17BB55032A94AA9000BAF159 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +46,6 @@
 		17BB55172A94B65300BAF159 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		17BB55192A94B72F00BAF159 /* MoviesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDetailsViewController.swift; sourceTree = "<group>"; };
 		17BB551B2A94B75100BAF159 /* MoviesOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesOverviewViewController.swift; sourceTree = "<group>"; };
-		17BB551D2A94DAAE00BAF159 /* DownloadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadData.swift; sourceTree = "<group>"; };
 		17DE06272A9E218C000658BF /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		5C868FBB421DCF0074C192AB /* Pods-moviesDeatails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moviesDeatails.debug.xcconfig"; path = "Target Support Files/Pods-moviesDeatails/Pods-moviesDeatails.debug.xcconfig"; sourceTree = "<group>"; };
 		61321596C77561E17F472A8E /* Pods_moviesDeatails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moviesDeatails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +67,9 @@
 		1781F6DE2A9A70A500D9B97E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1781F6E62A9A726900D9B97E /* ImageData */,
 				1781F6E32A9A71D900D9B97E /* JsonData */,
+				175954E22AA4756200C0B11C /* NetworkManeger.swift */,
+				175E5CE72AA5D7F10089FF0C /* MoviesDataHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -72,6 +79,8 @@
 			children = (
 				1781F6DC2A9A705400D9B97E /* UIViewController.swift */,
 				17DE06272A9E218C000658BF /* UITableView.swift */,
+				176198D02AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift */,
+				176198D62AA2359C00970AC3 /* ActivityLoader.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -97,17 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				17BB55172A94B65300BAF159 /* ApiResponse.swift */,
-				1781F6E42A9A722400D9B97E /* DataDownload.swift */,
 			);
 			path = JsonData;
-			sourceTree = "<group>";
-		};
-		1781F6E62A9A726900D9B97E /* ImageData */ = {
-			isa = PBXGroup;
-			children = (
-				17BB551D2A94DAAE00BAF159 /* DownloadData.swift */,
-			);
-			path = ImageData;
 			sourceTree = "<group>";
 		};
 		1781F6E72A9A72EB00D9B97E /* Delegate */ = {
@@ -139,6 +139,7 @@
 		1781F6EA2A9A751A00D9B97E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1744A1D42AA998BC0002E51D /* Local.json */,
 				17BB550A2A94AA9100BAF159 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -192,7 +193,6 @@
 				5C868FBB421DCF0074C192AB /* Pods-moviesDeatails.debug.xcconfig */,
 				A1B5F87DB873B3EBF2E68BF2 /* Pods-moviesDeatails.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -257,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BB550E2A94AA9100BAF159 /* LaunchScreen.storyboard in Resources */,
+				1744A1D52AA998BC0002E51D /* Local.json in Resources */,
 				17BB550B2A94AA9100BAF159 /* Assets.xcassets in Resources */,
 				17BB55092A94AA9000BAF159 /* Main.storyboard in Resources */,
 			);
@@ -311,15 +312,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1781F6E52A9A722400D9B97E /* DataDownload.swift in Sources */,
 				17BB55022A94AA9000BAF159 /* AppDelegate.swift in Sources */,
+				176198D12AA1E08500970AC3 /* MoviesDetailsViewControllerExtension.swift in Sources */,
+				176198D72AA2359C00970AC3 /* ActivityLoader.swift in Sources */,
 				177ED5362A98EAF300474F6A /* Constant.swift in Sources */,
 				17BB55162A94B60900BAF159 /* MoviesDetailsTableViewCell.swift in Sources */,
-				17BB551E2A94DAAE00BAF159 /* DownloadData.swift in Sources */,
+				175954E32AA4756200C0B11C /* NetworkManeger.swift in Sources */,
 				17DE06282A9E218C000658BF /* UITableView.swift in Sources */,
 				1781F6DD2A9A705400D9B97E /* UIViewController.swift in Sources */,
 				17BB55182A94B65300BAF159 /* ApiResponse.swift in Sources */,
 				17BB551A2A94B72F00BAF159 /* MoviesDetailsViewController.swift in Sources */,
+				175E5CE82AA5D7F10089FF0C /* MoviesDataHandler.swift in Sources */,
 				17BB55042A94AA9000BAF159 /* SceneDelegate.swift in Sources */,
 				17BB551C2A94B75100BAF159 /* MoviesOverviewViewController.swift in Sources */,
 			);
@@ -471,11 +474,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = moviesDeatails/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Movies;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,11 +504,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = moviesDeatails/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Movies;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

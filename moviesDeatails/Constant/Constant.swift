@@ -11,7 +11,6 @@ import Foundation
 struct JsonConstants{
     static let API_URL: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=38a73d59546aa378980a88b645f487fc&language=en-US&page="
     static let POSTER_HEADER: String = "https://image.tmdb.org/t/p/w500"
-    let TOTAL_PAGES: Int?
 }
 
 struct Identifiers{
@@ -31,4 +30,12 @@ struct Button{
 struct Image{
     static let SYSTEM_IMAGE_NAME: String = "photo"
     static let CORNER_RADIUS: Int = 15
+}
+
+
+struct Interfaces{
+    static let rating: String = "⭐️  Rating"
+    static let popularity: String = "♥️ Popularity"
+    static let overview: String = "Overview"
+    static let releaseDate: String = "Release Date"
 }
