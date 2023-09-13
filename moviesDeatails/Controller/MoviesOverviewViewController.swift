@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 class MoviesOverviewViewController: UIViewController{
     
@@ -34,39 +33,31 @@ class MoviesOverviewViewController: UIViewController{
         setInterface()
         setAllDetails()
     }
-    
-    ///Set Interfaces
     func setInterface(){
-        rating.text = Interfaces.rating
-        popularity.text = Interfaces.popularity
-        overview.text = Interfaces.overview
-        releaseDate.text = Interfaces.releaseDate
+        rating.text = "⭐️  Rating"
+        popularity.text = "♥️ Popularity"
+        overview.text = "Overview"
+        releaseDate.text = "Release Date"
     }
-    
-    ///Set all details Ui
     func setAllDetails(){
-        moviePoster.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
         movieTitle.text = movieDetail?.title
-        moviePopularity.text = "\(movieDetail?.popularity ?? 1100.006)"
-        movieRating.text = "\(movieDetail?.vote_average ?? 5.0)"
+        moviePopularity.text = "\(movieDetail!.popularity)"
+        movieRating.text = "\(movieDetail!.vote_average)"
         movieReleaseDate.text = movieDetail?.release_date
         overViewTextField.text = movieDetail?.overview
-        guard let pst_path = movieDetail?.poster_path else{
-            return
+        let urlString = String( JsonConstants.POSTER_HEADER + movieDetail!.poster_path)
+        moviePoster.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
+        Downloader.shared.getImage(fromUrl: urlString) { image in
+            if let imageObj = image{
+                DispatchQueue.main.async {
+                    self.moviePoster.image = imageObj
+                }
+            }
         }
-        let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
-        let placeHolder = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
-        moviePoster.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge ///SDWebImage
-        moviePoster.sd_imageIndicator?.startAnimatingIndicator()
-        guard let imageURL = Url.shared.getURL(urlString: urlString) else{
-            return
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.moviePoster.sd_setImage(with: imageURL, placeholderImage: placeHolder)
-        }
+        moviePoster.layer.cornerRadius = CGFloat(Image.CORNER_RADIUS)
     }
     
-    ///Navigation topBar Back Button
+    
     func backButton(){
         let backButton = UIBarButtonItem()
         backButton.title = Button.TITLE
