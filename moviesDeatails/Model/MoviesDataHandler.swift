@@ -17,10 +17,11 @@ class MovieDataBase: MoviesHandler{
          guard let url = Url.shared.getURL(urlString: urlString) else{
              return
          }
-         var data: Data?
          NetworkHandler.shared.getUrlData(url: url) { data1 in
-             data = data1
-             let jsonData = Decoder.shared.apiDecoder(type: Response.self ,data: data!)
+             guard let data = data1 else{
+                 return
+             }
+             let jsonData = Decoder.shared.apiDecoder(type: Response.self ,data: data)
              let movieData = jsonData?.results as [MovieData]?
              let t: Int = jsonData?.total_pages ?? 0
              completion?(movieData, t)
