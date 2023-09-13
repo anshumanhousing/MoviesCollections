@@ -6,6 +6,7 @@
 //
 import Foundation
 import UIKit
+import Alamofire
 
  class Url{
      static let shared = Url()
@@ -20,21 +21,14 @@ import UIKit
      static let shared = NetworkHandler()
      private init(){}
      func getUrlData(url: URL, completion: @escaping ((_ data: Data?) -> ()?)){
-         URLSession.shared.dataTask(with: url){ (data, response, error) in
-             if let error = error {
-                 print("\(error)")
-                 return
-             }
-             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                 print("Status code not 200")
-                 return
-             }
-             if let data = data {
-                 DispatchQueue.main.async {
-                     completion(data)
+         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).response{ data in
+             do {
+                 guard let data = data.data else {
+                     return
                  }
+                 completion(data)
              }
-         }.resume()
+         }
      }
  }
 
