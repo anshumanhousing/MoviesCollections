@@ -11,11 +11,9 @@ import SDWebImage
 
 class MoviesDetailsTableViewCell: UITableViewCell{
     
-    
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
-    
     
     ///set all details automatically 
     var movieDeatails: MovieData?{
@@ -28,8 +26,6 @@ class MoviesDetailsTableViewCell: UITableViewCell{
             }
             let urlString = String(JsonConstants.POSTER_HEADER + pst_path)
             let placeHolder = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholderImage
-            
-            
             //using SDWebImage 
             movieImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             movieImage.sd_imageIndicator?.startAnimatingIndicator()
@@ -54,71 +50,5 @@ class MoviesDetailsTableViewCell: UITableViewCell{
     override func prepareForReuse() {
         super.prepareForReuse()
         self.movieImage.image = nil
-        //imageView?.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    func setUp(data: MovieData?, isLastItem: Bool = false){
-//        if isLastItem {
-//            clearAll()
-//        }
-        if let data = data{
-            movieTitle.text = data.title
-            movieOverview.text = data.overview
-            let urlString = String(JsonConstants.POSTER_HEADER + data.poster_path)
-            movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME) ///placeholder
-            Downloader.shared.getImage(fromUrl: urlString) { image in
-                if let imageObj = image{
-                    DispatchQueue.main.async {
-                        self.movieImage.image = imageObj
-                    }
-                }
-            }
-        }
-        /*
-        movieTitle.text = data?.title
-        movieOverview.text = data?.overview
-        let urlString = String(JsonConstants.POSTER_HEADER + data!.poster_path)
-        movieImage.image = UIImage(named: Image.SYSTEM_IMAGE_NAME)
-        Downloader.shared.getImage(fromUrl: urlString) { image in
-            if let imageObj = image{
-                DispatchQueue.main.async {
-                    self.movieImage.image = imageObj
-                }
-            }
-        }
-         */
-    }
-    
-//    func clearAll(){
-//        movieImage.image = nil
-//        movieTitle.text = nil
-//        movieOverview.text = nil
-//    }
-    */
-
 }
