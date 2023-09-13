@@ -35,13 +35,6 @@ extension UIImageView{
                 }
                 ImageStore.cache.setObject(image, forKey: urlString as NSString)
             }
-            //////
-            ///
-            ///
-            ///
-            ///
-            ///
-            ///
         }
     }
 }
