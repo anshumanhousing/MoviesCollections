@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import InstantSearchVoiceOverlay
 /// for this class Extension are added
 class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -25,16 +26,20 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             self.moviesList = newValue
         }
     }
-    
+    let voiceOverlay = VoiceOverlayController()
     var currentIndex: Int?
     var pageNo: Int = 1
     var totalPages: Int = 0
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var MoviesDetailsTableView: UITableView!
+    @IBOutlet weak var micButton: UIButton!
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        micButton.setImage(UIImage(named: "mic.fill"), for: .normal)
+        
         getMoviesListFromApi()
     }
     
@@ -54,6 +59,26 @@ class MoviesDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             self.stopLoader(loader: loader)
         }
     }
+    
+    @IBAction func micButtonTap(_ sender: Any) {
+        voiceOverlay.settings.autoStart = true
+        voiceOverlay.settings.autoStop = true
+        voiceOverlay.settings.autoStopTimeout = 5
+        
+        
+        voiceOverlay.start(on: self) { text, bool, _ in
+            if bool{
+                self.searchBar.text = text
+                self.moviesList = self.dataT.filter{ $0.title.contains(text)}
+            }else{
+                self.searchBar.text = text
+                self.moviesList = self.dataT.filter{ $0.title.contains(text)}
+            }
+        } errorHandler: { error in }
+    }
+    
+    
+    
 }
 
 

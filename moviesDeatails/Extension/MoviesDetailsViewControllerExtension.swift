@@ -35,7 +35,6 @@ extension MoviesDetailsViewController{
         }
     }
     
-    
     ///selected row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.currentIndex = indexPath.row
