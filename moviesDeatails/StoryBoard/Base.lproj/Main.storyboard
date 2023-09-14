@@ -112,7 +112,6 @@
                     <navigationItem key="navigationItem" title="Movies Collection" id="GtJ-y5-tWw" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
                         <outlet property="MoviesDetailsTableView" destination="yQ2-hX-qV7" id="DpW-AS-5fC"/>
-                        <outlet property="micButton" destination="i8Q-P0-emc" id="Bcj-ft-GfQ"/>
                         <outlet property="searchBar" destination="2VL-HZ-A6I" id="8lh-Sn-Qc5"/>
                         <segue destination="aut-OV-qIT" kind="show" identifier="movieDetailsSegue" id="lBs-DW-aQe"/>
                     </connections>
